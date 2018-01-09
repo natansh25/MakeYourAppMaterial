@@ -33,6 +33,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
+import com.uncopt.android.widget.text.justify.JustifiedTextView;
+
+import me.grantland.widget.AutofitTextView;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -203,10 +206,12 @@ public class ArticleDetailFragment extends Fragment implements
         TextView titleView = (TextView) mRootView.findViewById(R.id.article_title);
         TextView bylineView = (TextView) mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
-        TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
+        AutofitTextView bodyView = (AutofitTextView) mRootView.findViewById(R.id.article_body);
+        //TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
 
 
-        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
+        bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "TitilliumWeb-Light.ttf"));
+
 
 
         if (mCursor != null) {

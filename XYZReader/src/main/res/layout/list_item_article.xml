@@ -11,9 +11,9 @@
     android:foreground="?selectableItemBackground">
 
     <LinearLayout
+        android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mainTitle"
         android:orientation="vertical">
 
         <!--suppress AndroidLintContentDescription -->
@@ -32,10 +32,12 @@
             android:ellipsize="end"
             android:maxLines="4"
             android:paddingBottom="4dp"
+            android:text="Pesto Bruchetta"
             android:paddingLeft="16dp"
+            android:fontFamily="serifas"
             android:paddingRight="16dp"
             android:paddingTop="16dp"
-            android:textColor="@color/ltgray" />
+            android:textColor="#212121" />
 
         <TextView
             android:id="@+id/article_subtitle"
@@ -47,7 +49,8 @@
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="#6000" />
+            android:text="Peter carlsson"
+            android:textColor="@color/mainTitle" />
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

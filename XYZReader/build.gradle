@@ -23,7 +23,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:design:25.3.0'
+    compile 'com.uncopt:android.justified:1.0'
+    compile 'me.grantland:autofittextview:0.2.+'
     compile "com.android.support:support-v4:$androidSupportVersion"
     compile "com.android.support:support-v13:$androidSupportVersion"
     compile "com.android.support:appcompat-v7:$androidSupportVersion"
