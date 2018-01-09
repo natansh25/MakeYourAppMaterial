@@ -1,5 +1,6 @@
 package com.example.xyzreader.ui;
 
+import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -78,15 +79,23 @@ public class ArticleListActivity extends ActionBarActivity implements
         getLoaderManager().initLoader(0, null, this);
 
 
-        if (isOnline() && savedInstanceState == null) {
 
-            refresh();
+        if(isOnline()!=true)
+        {
 
-        } else {
             Snackbar snackbar = Snackbar
                     .make(coordinatorLayout, "Not Connected to the Internet..!!", Snackbar.LENGTH_LONG);
 
             snackbar.show();
+        
+        }
+
+
+
+        if (isOnline() && savedInstanceState == null) {
+
+            refresh();
+
         }
         //animateViewsIn();
     }
@@ -165,8 +174,12 @@ public class ArticleListActivity extends ActionBarActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+
+                    Bundle bundle= ActivityOptions.makeSceneTransitionAnimation(ArticleListActivity.this).toBundle();
+
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
+                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))),bundle);
                 }
             });
             return vh;
