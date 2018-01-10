@@ -21,10 +21,10 @@
                 <!--suppress AndroidLintContentDescription -->
                 <ImageView
                     android:id="@+id/photo"
-                    android:transitionName="profile"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/detail_card_top_margin"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    android:transitionName="profile" />
 
                 <View
                     android:layout_width="match_parent"
@@ -117,6 +117,7 @@
         android:layout_marginRight="@dimen/fab_margin"
         android:background="@drawable/add_fab_background"
         android:contentDescription="@string/action_share"
+        android:elevation="6dp"
         android:src="@drawable/ic_share"
         android:stateListAnimator="@animator/fab_state_list_anim"
         app:elevation="@dimen/fab_elevation" />
